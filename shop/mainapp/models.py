@@ -9,10 +9,12 @@ from django.urls import reverse
 User = get_user_model()
 
 
-
+# Берет url продукта. Аналог получения абсолютного url
 def get_product_url(obj, viewname):
+    # .meta скрытый элемент
     ct_model = obj.__class__.meta.model_name
     return reverse(viewname, kwargs={'ct_model': ct_model, 'slug': obj.slug})
+
 
 ##### Вывод сообщения об ошибке
 class MinResolutionExceptionError(Exception):
