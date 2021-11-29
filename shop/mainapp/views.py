@@ -16,7 +16,7 @@ class ProductDetailView(DetailView):
         'smartphone': SmartphoneProduct
     }
 
-    # Метод позволяющий отказаться от model и queryset
+    # Метод позволяющий отказаться от отдельной инициализации model и queryset
     def dispatch(self, request, *args, **kwargs):
         self.model = self.CT_MODEL_MODEL_CLASS[kwargs['ct_model']]
         self.queryset = self.model._base_manager.all()
