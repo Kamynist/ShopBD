@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import DetailView
 
-from .models import NotebookProduct, SmartphoneProduct
+from .models import Notebook, Smartphone
 
 def shop(request):
     return render(request, 'base.html', {})
@@ -12,8 +12,8 @@ def test_v(request):
 class ProductDetailView(DetailView):
 
     CT_MODEL_MODEL_CLASS = {
-        'notebook': NotebookProduct,
-        'smartphone': SmartphoneProduct
+        'notebook': Notebook,
+        'smartphone': Smartphone
     }
 
     # Метод позволяющий отказаться от отдельной инициализации model и queryset

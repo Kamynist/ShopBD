@@ -128,7 +128,7 @@ class Customer(models.Model):
         return "Покупатель: {} {}".format(self.user.first_name, self.user.last_name)
 
 
-class NotebookProduct(Product):
+class Notebook(Product):
 
     diagonal = models.CharField(max_length=255, verbose_name='Диагональ')
     display_type = models.CharField(max_length=255, verbose_name='Тип дисплея')
@@ -145,7 +145,7 @@ class NotebookProduct(Product):
         return get_product_url(self, 'product_detail')
 
 
-class SmartphoneProduct(Product):
+class Smartphone(Product):
     diagonal = models.CharField(max_length=255, verbose_name='Диагональ')
     display_type = models.CharField(max_length=255, verbose_name='Тип дисплея')
     resolution = models.CharField(max_length=255, verbose_name='Разрешение')
